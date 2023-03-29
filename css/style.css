@@ -18,3 +18,30 @@ body {
   border-radius: 10px;
   background-color: #1f2937;
 }
+
+button:hover {
+  background-color: #4b5563;
+}
+
+.metaOperator {
+  background-color: #ef4444;
+  color: #fff;
+}
+
+.operator {
+  background-color: #6366f1;
+  color: #fff;
+}
+
+.number {
+  background-color: #d1d5db;
+  color: #111827;
+}
+
+.metaOperator,
+.operator,
+.number {
+  flex: 1 1 auto;
+  height: 10vh;
+  width: 10vh;
+}
