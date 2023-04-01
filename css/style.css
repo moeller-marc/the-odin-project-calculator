@@ -13,7 +13,7 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 70%;
-  width: 45%;
+  width: 35%;
   padding: 20px;
   border-radius: 10px;
   background-color: #1f2937;
@@ -38,10 +38,25 @@ button:hover {
   color: #111827;
 }
 
+#screen {
+  background-color: #fff;
+  width: 40vh;
+  height: 10vh;
+  flex: 1 1 auto;
+}
+
 .metaOperator,
 .operator,
 .number {
   flex: 1 1 auto;
   height: 10vh;
   width: 10vh;
+}
+
+#zero {
+  width: 20vh;
+}
+
+.metaOperator {
+  width: 15vh;
 }
