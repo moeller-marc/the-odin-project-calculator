@@ -18,6 +18,16 @@ const button0 = document.querySelector("#zero");
 const buttonDot = document.querySelector("#dot");
 const buttonEquals = document.querySelector("#equals");
 
+function concatNumbers(a, b) {
+  together = `${a}${b}`;
+  together = Number(together);
+  if (isNaN(together) == false) {
+    return together;
+  } else {
+    alert("something went wrong");
+  }
+}
+
 function buttonACPressed() {}
 
 buttonAC.addEventListener("click", buttonACPressed);
