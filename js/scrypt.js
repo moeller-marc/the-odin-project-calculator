@@ -46,6 +46,25 @@ function addToNumber(toAdd) {
   }
 }
 
+function evaluateCalculation() {
+  if (operator == 1) {
+    number1 = number1 + number2;
+    operator = 0;
+  }
+  if (operator == 2) {
+    number1 = number1 - number2;
+    operator = 0;
+  }
+  if (operator == 3) {
+    number1 = number1 / number2;
+    operator = 0;
+  }
+  if (operator == 4) {
+    number1 = number1 * number2;
+    operator = 0;
+  }
+}
+
 function concatNumbers(a, b) {
   together = `${a}${b}`;
   together = Number(together);
