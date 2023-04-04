@@ -75,78 +75,150 @@ function concatNumbers(a, b) {
   }
 }
 
-function displayOnScreen(toDisplay) {
-  screen.textContent = toDisplay;
+function displayOnScreen() {
+  if (operator == 0) {
+    screen.textContent = number1;
+  }
+  if (operator == 1 || operator == 2 || operator == 3 || operator == 4) {
+    screen.textContent = number2;
+  }
 }
 
-function buttonACPressed() {}
+function buttonACPressed() {
+  number1 = 0;
+  number2 = 0;
+  operator = 0;
+  result = 0;
+  numberBeingInputted = 0;
+  dotHasBeenUsed = 0;
+  number1FirstUse = 0;
+  number2FirstUse = 0;
+  displayOnScreen("");
+}
 
 buttonAC.addEventListener("click", buttonACPressed);
 
-function buttonCPressed() {}
+function buttonCPressed() {
+  if (operator == 0) {
+    number1 = Math.floor(number1 / 10);
+  }
+  if (operator == 1 || operator == 2 || operator == 3 || operator == 4) {
+    number2 = Math.floor(number2 / 10);
+  }
+}
 
 buttonC.addEventListener("click", buttonCPressed);
 
-function buttonDividePressed() {}
+function buttonDividePressed() {
+  operator = 3;
+  displayOnScreen();
+}
 
 buttonDivide.addEventListener("click", buttonDividePressed);
 
-function button7Pressed() {}
+function button7Pressed() {
+  addToNumber(7);
+  displayOnScreen();
+}
 
 button7.addEventListener("click", button7Pressed);
 
-function button8Pressed() {}
+function button8Pressed() {
+  addToNumber(8);
+  displayOnScreen();
+}
 
 button8.addEventListener("click", button8Pressed);
 
-function button9Pressed() {}
+function button9Pressed() {
+  addToNumber(9);
+  displayOnScreen();
+}
 
 button9.addEventListener("click", button9Pressed);
 
-function buttonMultiplyPressed() {}
+function buttonMultiplyPressed() {
+  operator = 4;
+  displayOnScreen();
+}
 
 buttonMultiply.addEventListener("click", buttonMultiplyPressed);
 
-function button4Pressed() {}
+function button4Pressed() {
+  addToNumber(4);
+  displayOnScreen();
+}
 
 button4.addEventListener("click", button4Pressed);
 
-function button5Pressed() {}
+function button5Pressed() {
+  addToNumber(5);
+  displayOnScreen();
+}
 
 button5.addEventListener("click", button5Pressed);
 
-function button6Pressed() {}
+function button6Pressed() {
+  addToNumber(6);
+  displayOnScreen();
+}
 
 button6.addEventListener("click", button6Pressed);
 
-function buttonSubtractPressed() {}
+function buttonSubtractPressed() {
+  operator = 2;
+  displayOnScreen();
+}
 
 buttonSubtract.addEventListener("click", buttonSubtractPressed);
 
-function button1Pressed() {}
+function button1Pressed() {
+  addToNumber(1);
+  displayOnScreen();
+}
 
 button1.addEventListener("click", button1Pressed);
 
-function button2Pressed() {}
+function button2Pressed() {
+  addToNumber(2);
+  displayOnScreen();
+}
 
 button2.addEventListener("click", button2Pressed);
 
-function button3Pressed() {}
+function button3Pressed() {
+  addToNumber(3);
+  displayOnScreen();
+}
 
 button3.addEventListener("click", button3Pressed);
 
-function buttonAdditionPressed() {}
+function buttonAdditionPressed() {
+  operator = 1;
+  displayOnScreen();
+}
 
 buttonAddition.addEventListener("click", buttonAdditionPressed);
 
-function button0Pressed() {}
+function button0Pressed() {
+  addToNumber(0);
+  displayOnScreen();
+}
 
 button0.addEventListener("click", button0Pressed);
 
-function buttonDotPressed() {}
+function buttonDotPressed() {
+  if (dotHasBeenUsed == 0) {
+    addToNumber(".");
+    dotHasBeenUsed = 1;
+  }
+}
 
 buttonDot.addEventListener("click", buttonDotPressed);
 
-function buttonEqualsPressed() {}
+function buttonEqualsPressed() {
+  number1 = evaluateCalculation();
+  displayOnScreen();
+}
 
 buttonEquals.addEventListener("click", buttonEqualsPressed);
