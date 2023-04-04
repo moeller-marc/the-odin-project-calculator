@@ -18,6 +18,7 @@ const button0 = document.querySelector("#zero");
 const buttonDot = document.querySelector("#dot");
 const buttonEquals = document.querySelector("#equals");
 
+let tempOperatorStorage = 0;
 let number1 = 0;
 let number2 = 0;
 let operator = 0;
@@ -26,8 +27,21 @@ let numberBeingInputted = 0;
 let dotHasBeenUsed = 0;
 let number1FirstUse = 0;
 let number2FirstUse = 0;
+let toLong = 0;
+
+function getlength(number) {
+  String(number).replace(".", "").length;
+  return number.toString().length;
+}
 
 function addToNumber(toAdd) {
+  if (getlength(number1) >= 10 || getlength(number2) >= 10) {
+    toLong = 1;
+  }
+  if (toLong == 1) {
+    tempOperatorStorage = operator;
+    operator = 10;
+  }
   if (operator == 0) {
     if (number1FirstUse == 1) {
       number1 = concatNumbers(number1, toAdd);
@@ -43,6 +57,9 @@ function addToNumber(toAdd) {
       number2 = toAdd;
       number2FirstUse = 1;
     }
+  }
+  if (operator == 10) {
+    operator = tempOperatorStorage;
   }
 }
 
@@ -124,6 +141,7 @@ function buttonDividePressed() {
     evaluateCalculation();
     operator = 3;
   }
+  toLong = 0;
 }
 
 buttonDivide.addEventListener("click", buttonDividePressed);
@@ -157,6 +175,8 @@ function buttonMultiplyPressed() {
     evaluateCalculation();
     operator = 4;
   }
+
+  toLong = 0;
 }
 
 buttonMultiply.addEventListener("click", buttonMultiplyPressed);
@@ -190,6 +210,7 @@ function buttonSubtractPressed() {
     evaluateCalculation();
     operator = 2;
   }
+  toLong = 0;
 }
 
 buttonSubtract.addEventListener("click", buttonSubtractPressed);
@@ -223,6 +244,7 @@ function buttonAdditionPressed() {
     evaluateCalculation();
     operator = 1;
   }
+  toLong = 0;
 }
 
 buttonAddition.addEventListener("click", buttonAdditionPressed);
