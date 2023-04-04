@@ -18,6 +18,15 @@ const button0 = document.querySelector("#zero");
 const buttonDot = document.querySelector("#dot");
 const buttonEquals = document.querySelector("#equals");
 
+let number1 = 0;
+let number2 = 0;
+let operator = 0;
+let result = 0;
+let numberBeingInputted = 0;
+let dotHasBeenUsed = 0;
+let number1FirstUse = 0;
+let number2FirstUse = 0;
+
 function concatNumbers(a, b) {
   together = `${a}${b}`;
   together = Number(together);
