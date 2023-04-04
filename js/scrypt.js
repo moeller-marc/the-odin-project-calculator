@@ -50,19 +50,24 @@ function evaluateCalculation() {
   if (operator == 1) {
     number1 = number1 + number2;
     operator = 0;
+    number2 = 0;
   }
   if (operator == 2) {
     number1 = number1 - number2;
     operator = 0;
+    number2 = 0;
   }
   if (operator == 3) {
     number1 = number1 / number2;
     operator = 0;
+    number2 = 0;
   }
   if (operator == 4) {
     number1 = number1 * number2;
     operator = 0;
+    number2 = 0;
   }
+  return number1;
 }
 
 function concatNumbers(a, b) {
@@ -219,6 +224,9 @@ buttonDot.addEventListener("click", buttonDotPressed);
 function buttonEqualsPressed() {
   number1 = evaluateCalculation();
   displayOnScreen();
+  if (number1 == Infinity) {
+    screen.textContent = "you cant divide by 0";
+  }
 }
 
 buttonEquals.addEventListener("click", buttonEqualsPressed);
