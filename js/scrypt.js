@@ -67,6 +67,7 @@ function evaluateCalculation() {
     operator = 0;
     number2 = 0;
   }
+
   return number1;
 }
 
@@ -110,13 +111,19 @@ function buttonCPressed() {
   if (operator == 1 || operator == 2 || operator == 3 || operator == 4) {
     number2 = Math.floor(number2 / 10);
   }
+  displayOnScreen();
 }
 
 buttonC.addEventListener("click", buttonCPressed);
 
 function buttonDividePressed() {
-  operator = 3;
-  displayOnScreen();
+  if (operator == 0) {
+    operator = 3;
+    displayOnScreen();
+  } else {
+    evaluateCalculation();
+    operator = 3;
+  }
 }
 
 buttonDivide.addEventListener("click", buttonDividePressed);
@@ -143,8 +150,13 @@ function button9Pressed() {
 button9.addEventListener("click", button9Pressed);
 
 function buttonMultiplyPressed() {
-  operator = 4;
-  displayOnScreen();
+  if (operator == 0) {
+    operator = 4;
+    displayOnScreen();
+  } else {
+    evaluateCalculation();
+    operator = 4;
+  }
 }
 
 buttonMultiply.addEventListener("click", buttonMultiplyPressed);
@@ -171,8 +183,13 @@ function button6Pressed() {
 button6.addEventListener("click", button6Pressed);
 
 function buttonSubtractPressed() {
-  operator = 2;
-  displayOnScreen();
+  if (operator == 0) {
+    operator = 2;
+    displayOnScreen();
+  } else {
+    evaluateCalculation();
+    operator = 2;
+  }
 }
 
 buttonSubtract.addEventListener("click", buttonSubtractPressed);
@@ -199,8 +216,13 @@ function button3Pressed() {
 button3.addEventListener("click", button3Pressed);
 
 function buttonAdditionPressed() {
-  operator = 1;
-  displayOnScreen();
+  if (operator == 0) {
+    operator = 1;
+    displayOnScreen();
+  } else {
+    evaluateCalculation();
+    operator = 1;
+  }
 }
 
 buttonAddition.addEventListener("click", buttonAdditionPressed);
