@@ -28,6 +28,10 @@ function concatNumbers(a, b) {
   }
 }
 
+function displayOnScreen(toDisplay) {
+  screen.textContent = toDisplay;
+}
+
 function buttonACPressed() {}
 
 buttonAC.addEventListener("click", buttonACPressed);
