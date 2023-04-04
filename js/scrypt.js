@@ -27,6 +27,25 @@ let dotHasBeenUsed = 0;
 let number1FirstUse = 0;
 let number2FirstUse = 0;
 
+function addToNumber(toAdd) {
+  if (operator == 0) {
+    if (number1FirstUse == 1) {
+      number1 = concatNumbers(number1, toAdd);
+    } else {
+      number1 = toAdd;
+      number1FirstUse = 1;
+    }
+  }
+  if (operator == 1 || operator == 2 || operator == 3 || operator == 4) {
+    if (number2FirstUse == 1) {
+      number2 = concatNumbers(number2, toAdd);
+    } else {
+      number2 = toAdd;
+      number2FirstUse = 1;
+    }
+  }
+}
+
 function concatNumbers(a, b) {
   together = `${a}${b}`;
   together = Number(together);
