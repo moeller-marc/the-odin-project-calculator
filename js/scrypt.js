@@ -67,7 +67,7 @@ function evaluateCalculation() {
     operator = 0;
     number2 = 0;
   }
-
+  number1 = number1.toFixed(3);
   return number1;
 }
 
