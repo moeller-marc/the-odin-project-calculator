@@ -85,6 +85,7 @@ function evaluateCalculation() {
     number2 = 0;
   }
   number1 = number1.toFixed(3);
+  number1 = Number(number1);
   return number1;
 }
 
@@ -274,3 +275,111 @@ function buttonEqualsPressed() {
 }
 
 buttonEquals.addEventListener("click", buttonEqualsPressed);
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape key" || event.key === "Escape") {
+    buttonACPressed();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Backspace key" || event.key === "Backspace") {
+    buttonCPressed();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Divide" || event.key === "/") {
+    buttonDividePressed();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "7" || event.key === "Digit7") {
+    button7Pressed();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "8" || event.key === "Digit8") {
+    button8Pressed();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "9" || event.key === "Digit9") {
+    button9Pressed();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Multiply" || event.key === "*") {
+    buttonMultiplyPressed();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "4" || event.key === "Digit4") {
+    button4Pressed();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "5" || event.key === "Digit5") {
+    button5Pressed();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "6" || event.key === "Digit6") {
+    button6Pressed();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Subtract" || event.key === "-") {
+    buttonSubtractPressed();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "1" || event.key === "Digit1") {
+    button1Pressed();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "2" || event.key === "Digit2") {
+    button2Pressed();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "3" || event.key === "Digit3") {
+    button3Pressed();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Add" || event.key === "+") {
+    buttonAdditionPressed();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "0" || event.key === "Digit0") {
+    button0Pressed();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Decimal" || event.key === ".") {
+    buttonDotPressed();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Equal" || event.key === "Enter") {
+    buttonEqualsPressed();
+  }
+});
